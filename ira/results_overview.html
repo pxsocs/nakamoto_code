@@ -1,0 +1,349 @@
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <div class="lead text-center">Results</div>
+            <table class="table table-striped text-center">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="text-start">
+                            Simulation
+                            <span class="lead float-end">{{results['years']}} years</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start th-rotate" style="width:10%">
+                            <span class="th-span">
+                                Final Balance
+                                <br>
+                                Net of ALL fees
+                            </span>
+                        </td>
+                        {% set old_ira_val =  results['chart_data']['waterfall']['Net After Unwind at End'] %}
+                        {% set new_ira_val =  results['chart_data']['waterfall']['New IRA Net After Unwind at End'] %}
+                        <td>
+                            <span class="text-small text-dark text-strong">{{results['ira']}}</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (old_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{old_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                            <span class="text-small text-yellow text-strong">Swan</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (new_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{new_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start th-rotate" style="width:10%">
+                            <span class="th-span">Custody Fees</span>
+                        </td>
+                        {% set old_ira_val =  results['chart_data']['waterfall']['Custody Fees'] %}
+                        {% set new_ira_val =  results['chart_data']['waterfall']['New IRA Custody Fees'] %}
+                        <td>
+                            <span class="text-small text-dark text-strong">{{results['ira']}}</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (old_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{old_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                            <span class="text-small text-yellow text-strong">Swan</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (new_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{new_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% set old_ira_val =  results['chart_data']['waterfall']['Fees on Contributions'] %}
+                        {% set new_ira_val =  results['chart_data']['waterfall']['New IRA Fees on Contributions'] %}
+                        {%if old_ira_val != 0 and new_ira_val != 0 %}
+                    <tr>
+                        <td class="text-start th-rotate" style="width:10%">
+                            <span class="th-span">
+                                Fees on
+                                <br>
+                                Contributions
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-small text-dark text-strong">{{results['ira']}}</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (old_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{old_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                            <span class="text-small text-yellow text-strong">Swan</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (new_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{new_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {%endif%}
+                    <tr>
+                        <td class="text-start th-rotate" style="width:10%">
+                            <span class="th-span">
+                                Unwind Fees
+                                <br>
+                                at final date
+                            </span>
+                        </td>
+                        {% set old_ira_val =  results['chart_data']['waterfall']['Unwind Costs at End'] %}
+                        {% set new_ira_val =  results['chart_data']['waterfall']['New IRA Unwind Costs at End'] %}
+                        <td>
+                            <span class="text-small text-dark text-strong">{{results['ira']}}</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (old_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{old_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                            <span class="text-small text-yellow text-strong">Swan</span>
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ (new_ira_val/([old_ira_val, new_ira_val]|max) * 100) }}%">
+                                    $ {{new_ira_val | jformat(0)}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <div class="lead text-center">Fees</div>
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-yellow">Swan</th>
+                        <th class="text-dark">{{results['ira']}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-start">Custody Fees (p.a)</td>
+                        <td>{{(ira_json['swan']['Custody Fee (%)'] * 100)| jformat(2)}}%</td>
+                        <td>{{(ira_json[results['ira_json_name']]['Custody Fee (%)'] * 100) | jformat(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Minimum Custody Fee (p.a.)</td>
+                        <td>$ {{ira_json['swan']['Min Custody Fee (USD)'] | jformat(0)}}</td>
+                        <td>$ {{ira_json[results['ira_json_name']]['Min Custody Fee (USD)'] | jformat(0)}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Setup Fee</td>
+                        <td>$ {{ira_json['swan']['Setup Fee (USD)'] | jformat(0)}}</td>
+                        <td>$ {{ira_json[results['ira_json_name']]['Setup Fee (USD)'] | jformat(0)}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Setup Fee (% of deposit)</td>
+                        <td>-%</td>
+                        <td>
+                            {%if ira_json[results['ira_json_name']].get('Setup Fee (as % of deposit)') != None%}
+                                {{(ira_json[results['ira_json_name']].get('Setup Fee (as % of deposit)') * 100) | jformat(2)}}%
+                            {%else%}
+                                -%
+                            {%endif%}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Buy / Sell Fees</td>
+                        <td>{{(ira_json['swan']['Buy Fee (%)'] * 100)| jformat(2)}}%</td>
+                        <td>{{(ira_json[results['ira_json_name']]['Buy Fee (%)'] * 100) | jformat(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Price Spread</td>
+                        <td>{{(ira_json['swan']['Spread (%)'] * 100)| jformat(2)}}%</td>
+                        <td>{{(ira_json[results['ira_json_name']]['Spread (%)'] * 100) | jformat(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Price Spread</td>
+                        <td>$ {{ira_json['swan']['Spread (USD)'] | jformat(0)}}</td>
+                        <td>$ {{ira_json[results['ira_json_name']]['Spread (USD)'] | jformat(0)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="lead text-center">Features</div>
+            <!-- Include Feature Comparison -->
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-yellow">Swan</th>
+                        <th class="text-dark">{{results['ira']}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-start">Bitcoin Only</td>
+                        <td>
+                            {% if ira_json['swan']['Bitcoin Only'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Bitcoin Only'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">In-kind transfer</td>
+                        <td>
+                            {% if ira_json['swan']['In-kind transfer'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['In-kind transfer'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Custodial</td>
+                        <td>
+                            {% if ira_json['swan']['Custodial'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Custodial'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Multisig</td>
+                        <td>
+                            {% if ira_json['swan']['Multisig'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Multisig'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Custody Details</td>
+                        <td>
+                            {{ira_json['swan']['Custody Details']}}
+                        </td>
+                        <td>
+                            {{ira_json[results['ira_json_name']]['Custody Details']}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">White Glove Service</td>
+                        <td>
+                            {% if ira_json['swan']['Services']['White Glove'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Services']['White Glove'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Proprietary Research</td>
+                        <td>
+                            {% if ira_json['swan']['Services']['Prop Research'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Services']['Prop Research'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Access to Experts</td>
+                        <td>
+                            {% if ira_json['swan']['Services']['Access to Experts'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Services']['Access to Experts'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Community</td>
+                        <td>
+                            {% if ira_json['swan']['Services']['Community'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Services']['Community'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Bitcoin Awards</td>
+                        <td>
+                            {% if ira_json['swan']['Services']['Bitcoin Awards'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if ira_json[results['ira_json_name']]['Services']['Bitcoin Awards'] == true%}
+                            <i class="fa-solid fa-lg fa-circle-check text-success"></i>
+                            {% else %}
+                            <i class="fa-solid fa-lg fa-circle-xmark text-red"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

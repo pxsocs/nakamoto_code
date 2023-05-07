@@ -1,0 +1,93 @@
+{% extends "navbar_layout.html" %} {% block content %}
+<!-- Datatables.net CDN -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<h5>IRA Comparison</h5>
+<h6>
+    <a href="/ira/list">Click here</a>
+    for the full list of providers
+</h6>
+<small>
+    List can be edited under
+    <code>json/files/ira_matrix.json</code>
+</small>
+<div class="row" style="padding-top: 20px;">
+    <div class="col-sm-12">
+        <div class="input-group mb-3">
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                    Client's current IRA provider
+                </button>
+                <ul class="dropdown-menu">
+                    {% for ira in ira_list%}
+                    <li>
+                        <a class="dropdown-item select_ira">{{ira.name}}</a>
+                    </li>
+                    {%endfor%}
+                </ul>
+            </div>
+            <input
+                type="text"
+                disabled
+                class="form-control text-end"
+                id="selected_ira"
+                placeholder="Choose One"
+            >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">IRA Cash or Non-BTC Positions ($)</span>
+            <input
+                type="text"
+                class="form-control text-end"
+                placeholder="0.00"
+                id="account_value"
+            >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">IRA Holdings (BTC)</span>
+            <input
+                type="text"
+                class="form-control text-end"
+                placeholder="0.00000000"
+                id="btc_value"
+            >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Years to simulate</span>
+            <input
+                type="text"
+                class="form-control text-end"
+                value="10"
+                id="years_value"
+            >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Future contributions ($ / year)</span>
+            <input
+                type="text"
+                class="form-control text-end"
+                placeholder="10,000"
+                id="contribution_value"
+            >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">BTC price change per year (%)</span>
+            <input
+                type="text"
+                class="form-control text-end"
+                value="+10.00%"
+                id="btc_chg_value"
+            >
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-outline-dark" id="run_comparison" type="button">Run Comparison</button>
+        </div>
+        <div style="padding-top: 40px;">
+            <div id="ira_details" class="content-section">
+                <span class="loadanim">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='orangenomics/js/ira_comp.js')}}"></script>
+{% endblock content %}

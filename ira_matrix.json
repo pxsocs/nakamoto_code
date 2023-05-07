@@ -1,0 +1,323 @@
+{
+    "swan":
+        {
+            "IRA Service Name": "Swan IRA",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 0,
+            "Setup Time (Days)": 0,
+            "Buy Fee (%)": 0.0099,
+            "Sell Fee (%)": 0.0099,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.0025,
+            "Min Custody Fee (USD)": 240,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": true,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": false,
+                "Simple": false,
+                "Solo 401k": false
+                },
+            "In-kind transfer": false,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "Prime Trust",
+            "Services": {
+                "White Glove": true,
+                "Prop Research": true,
+                "Access to Experts": true,
+                "Community": true,
+                "Bitcoin Awards": false,
+                "Other Services": ""
+                }
+        },
+        "itrust":
+        {
+            "IRA Service Name": "iTrust IRA",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 1000,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.01,
+            "Sell Fee (%)": 0.01,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": null,
+                "Simple": null,
+                "Solo 401k": null
+                },
+            "In-kind transfer": true,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "Coinbase",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": false,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": false,
+                "Other Services": ""
+                }
+        },
+        "choice_custodial":
+        {
+            "IRA Service Name": "Choice Custodial (Cold Storage)",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 0,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.01,
+            "Sell Fee (%)": 0.01,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 100,
+            "Custody Fee (%)": 0.01,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": null,
+                "Simple": null,
+                "Solo 401k": null
+                },
+            "In-kind transfer": false,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "Kingdom Trust",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": false,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": true,
+                "Other Services": ""
+                }
+        },
+        "choice_keys":
+        {
+            "IRA Service Name": "Choice (Hold your keys)",
+            "Setup Fee (USD)": 625,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 0,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.01,
+            "Sell Fee (%)": 0.01,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.0,
+            "Min Custody Fee (USD)": 160,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": null,
+                "Simple": null,
+                "Solo 401k": null
+                },
+            "In-kind transfer": false,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "-",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": false,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": true,
+                "Other Services": ""
+                }
+        },
+        "bitcoin_IRA":
+        {
+            "IRA Service Name": "Bitcoin IRA",
+            "Setup Fee (USD)": 0,
+            "Setup Fee (as % of deposit)": 0.0599,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 3000,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.02,
+            "Sell Fee (%)": 0.02,
+            "Spread (USD)": 0.00,
+            "Spread (%)": 0.01,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.01,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": true,
+                "Simple": true,
+                "Solo 401k": true
+                },
+            "In-kind transfer": true,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "BitGo",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": false,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": false,
+                "Other Services": ""
+                }
+        },
+        "robinhood":
+        {
+            "IRA Service Name": "Robinhood IRA",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 0,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.01,
+            "Sell Fee (%)": 0.01,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.01,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": true,
+                "Simple": false,
+                "Solo 401k": false
+                },
+            "In-kind transfer": true,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "Robinhood",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": true,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": true,
+                "Other Services": ""
+                }
+        },
+        "alto":
+        {
+            "IRA Service Name": "Alto Crypto IRA",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 10,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0.01,
+            "Sell Fee (%)": 0.01,
+            "Spread (USD)": 0,
+            "Spread (%)": 0,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.01,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": false,
+                "Simple": false,
+                "Solo 401k": false
+                },
+            "In-kind transfer": true,
+            "Custodial":  true,
+            "Multisig": false,
+            "Custody Details": "Coinbase",
+            "Services": {
+                "White Glove": null,
+                "Prop Research": null,
+                "Access to Experts": null,
+                "Community": null,
+                "Bitcoin Awards": null,
+                "Other Services": ""
+                }
+        },
+        "GBTC":
+        {
+            "IRA Service Name": "GBTC held at brokerage IRA",
+            "Setup Fee (USD)": 0,
+            "Additional Upfront Fees (USD)": {
+                "None": 0
+                },
+            "Minimum Account Value (USD)": 10,
+            "Setup Time (Days)": null,
+            "Buy Fee (%)": 0,
+            "Sell Fee (%)": 0,
+            "Spread (USD)": 0,
+            "Spread (%)": 0.01,
+            "Withdraw Fee (USD)": 0,
+            "Custody Fee (%)": 0.02,
+            "Min Custody Fee (USD)": 0,
+            "Additional Recurring Fees (USD)": {
+                "None": 0
+                },
+            "Bitcoin Only": false,
+            "IRA Types": {
+                "Traditional": true,
+                "Roth": true,
+                "SEP": false,
+                "Simple": false,
+                "Solo 401k": false
+                },
+            "In-kind transfer": false,
+            "Custodial":  false,
+            "Multisig": false,
+            "Custody Details": "Brokerage Account",
+            "Services": {
+                "White Glove": false,
+                "Prop Research": false,
+                "Access to Experts": false,
+                "Community": false,
+                "Bitcoin Awards": false,
+                "Other Services": "Subject to NAV Discount or Premium"
+                }
+        }
+}

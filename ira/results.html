@@ -1,0 +1,119 @@
+{% extends "navbar_layout.html" %} {% block content %}
+<style>
+    #rotate-device {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1000;
+            display: none;
+            text-align: center;
+        }
+        #rotate-device h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+</style>
+<div id="rotate-device">
+    <h4>
+        <i class="fa-solid fa-mobile-screen fa-lg text-white">
+            <i class="fa-solid fa-rotate-right text-white"></i>
+        </i>
+    </h4>
+    <h3>Please rotate your device</h3>
+    <h6 class="text-green">
+        This page only works
+        <br>
+        in landscape mode in
+        <br>
+        mobile devices
+    </h6>
+    <h6 class="text-yellow">
+        This page is optimized
+        <br>
+        for desktop browsers.
+        <br>
+        Mobile experience will be limited
+    </h6>
+</div>
+<h5>
+    <span class="lead">{{inputs['ira']}}</span>
+    <span class="float-end">
+        <a href="/ira/comparison" class="btn btn-sm btn-outline-dark" type="button">
+            <i class="fa-solid fa-rotate-left"></i>
+            &nbsp;New Analysis
+        </a>
+    </span>
+</h5>
+<ul class="nav nav-tabs align-self-end">
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#inputs">
+            <i class="fa-regular fa-keyboard"></i>
+            &nbsp;&nbsp;Inputs
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#punchline">
+            <i class="fa-regular fa-keyboard"></i>
+            &nbsp;&nbsp;Summary
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#overview">
+            <i class="fa-solid fa-square-poll-horizontal"></i>
+            &nbsp;&nbsp;Overview
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#unwind">
+            <i class="fa-solid fa-binoculars"></i>
+            &nbsp;&nbsp;Forecast
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#comp_table">
+            <i class="fa-solid fa-water"></i>
+            &nbsp;&nbsp;Waterfall
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#summary">
+            <i class="fa-solid fa-table"></i>
+            &nbsp;&nbsp;{{inputs['ira']}} Flows
+        </a>
+    </li>
+</ul>
+<div class="container-fluid">
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade" id="inputs">
+            {% include 'orangenomics/ira/results_inputs.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="punchline">
+            {% include 'orangenomics/ira/results_ira_punchline.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="summary">
+            {% include 'orangenomics/ira/results_table.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="overview">
+            {% include 'orangenomics/ira/results_overview.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="unwind">
+            {% include 'orangenomics/ira/results_compare.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="comp_table">
+            {% include 'orangenomics/ira/results_comp_table.html' %}
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='orangenomics/js/ira_results.js')}}"></script>
+<!--  High Charts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+{% endblock content %}

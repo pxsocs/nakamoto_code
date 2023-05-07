@@ -1,0 +1,182 @@
+{% block content %}
+<div style="padding-top: 10px;">
+    <h6 class="text-blue">Results</h6>
+    <!-- Table of Compared Results -->
+    <table class="table table-condensed table-striped text-small">
+        <thead class="background-yellow">
+            <tr class="text-center">
+                <th class="text-start">Year</th>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <th>{{year | jformat(0)}}</th>
+                {%endfor%}
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-end">
+                <td class="text-start">
+                    <i class="fa-brands fa-bitcoin fa-lg"></i>
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                        $ {{item['btc_price'] | jformat(0)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <tr>
+                <td class="text-start background-yellow" colspan="100%">
+                    <span class="lead text-small">{{inputs['ira']}} (current position)</span>
+                </td>
+            </tr>
+            <!-- Current Provider BTC position -->
+            <tr class="text-end">
+                <td class="text-start">
+                    <i class="fa-brands fa-bitcoin fa-lg"></i>
+                    position
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                         {{item['btc_pos'] | jformat(2)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Current Provider USD position -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Portfolio value (USD)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                         $ {{item['port_pos'] | jformat(0)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Current Provider USD position -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Contribution (USD)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                         $ {{item['contribution_gross'] | jformat(0)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Fees paid -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Fees paid @ year
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                         $ {{item['total_fees'] | jformat(0)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Cum Fees Paid -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Fees paid (cumulative)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                                         $ {{item['total_fees_cum'] | jformat(0)}}
+                                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Opportunity Cost of Fees -->
+            <tr>
+                <td class="text-start background-yellow" colspan="100%">
+                    <span class="lead text-small text-bold">Opportunity Cost of Fees</span>
+                </td>
+            </tr>
+            <!-- Cum Fees Paid BTC -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Fees paid cumulative (BTC)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                    <span class="text-red">{{item['fees_in_btc_cum'] | jformat(2)}}</span>
+                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Cum Fees Paid BTC -->
+            <tr class="text-end">
+                <td class="text-start">
+                    BTC position
+                    <span class="text-super-small">&nbsp;if no fees where paid</span>
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                    <span class="text-red">{{(item['fees_in_btc_cum'] + item['btc_pos'])| jformat(2)}}</span>
+                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Opportunity Cost -->
+            <tr class="text-end">
+                <td class="text-start">
+                    Opportunity Cost (USD)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                    <span class="text-red">$ {{item['opp_cost_usd'] | jformat(0)}}</span>
+                    {%endif%}
+                                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+            <!-- Opportunity Cost as % of portfolio-->
+            <tr class="text-end">
+                <td class="text-start">
+                    Opportunity Cost (as % of portfolio)
+                </td>
+                {%for year in range(0, inputs['years'] + 1)%}
+                <td>
+                    {% for item in results['current_ira_future_cf']%}
+                                    {% if item["year"] == year %}
+                    <span class="text-red">
+                        {{(item['opp_cost_usd'] / item['port_pos'] * 100) | jformat(2)}}%
+                    </span>
+                    {%endif%}
+                {%endfor%}
+                </td>
+                {%endfor%}
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

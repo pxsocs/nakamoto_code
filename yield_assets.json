@@ -1,0 +1,123 @@
+[
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS1MO",
+    "name": "1 Month Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS1MO",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "1M"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS3MO",
+    "name": "3 Month Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS3MO",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "3M"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS6MO",
+    "name": "6 Month Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS6MO",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "6M"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS1",
+    "name": "1 Year Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS1",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "1Y"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS2",
+    "name": "2 Year Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS2",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "2Y"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS5",
+    "name": "5 Year Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS5",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "5Y"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS10",
+    "name": "10 Year Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS10",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "10Y"
+  },
+  {
+    "issuer": "US Treasury",
+    "ticker": "DGS30",
+    "name": "30 Year Treasury Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DGS30",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "30Y"
+  },
+  {
+    "issuer": "Federal Reserve",
+    "ticker": "DFEDTARU",
+    "name": "Federal Funds Target Range - Upper Limit",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DFEDTARU",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "N/A"
+  },
+  {
+    "issuer": "Federal Reserve",
+    "ticker": "DFEDTARL",
+    "name": "Federal Funds Target Range - Lower Limit",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/DFEDTARL",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "N/A"
+  },
+  {
+    "issuer": "Federal Reserve",
+    "ticker": "FEDFUNDS",
+    "name": "Effective Federal Funds Rate",
+    "source": "FRED",
+    "url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+    "type": "rate",
+    "currency": "USD",
+    "country": "US",
+    "maturity": "N/A"
+  }
+]

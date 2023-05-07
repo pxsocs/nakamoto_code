@@ -1,0 +1,33 @@
+{% extends "navbar_layout.html" %} {% block content %}
+<!-- Datatables.net CDN -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<h5>IRA Competitor List</h5>
+<small>
+    List can be edited under
+    <code>json/files/ira_matrix.json</code>
+</small>
+<div class="row">
+    <div class="col-sm-12">
+        {{ira_list | safe}}
+    </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#comp_table').DataTable({
+      "order": [0, 'desc'],
+      "pageLength": 100
+    });
+
+
+    $('#comp_table tr td').each(function(){
+                                        if ($(this).text().indexOf("Swan") >= 0) {
+                                        $(this).closest('tr').css('background-color','#FCC800');
+                                        $(this).closest('tr').css('color','#31597F');
+}
+                                        });
+
+
+  });
+</script>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% block content %}
+<div class="col-sm-12" style="padding-top: 10px;">
+    <h6>Inputs</h6>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">IRA Provider</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="{{inputs['ira']}}"
+            disabled
+        >
+    </div>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">IRA Cash or Non-BTC Positions ($)</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="${{inputs['cash'] | jformat(2)}}"
+            id="account_value"
+            disabled
+        >
+    </div>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">IRA Holdings (BTC)</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="{{inputs['btc'] | jformat(8)}}"
+            id="btc_value"
+            disabled
+        >
+    </div>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">Years to simulate</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="{{inputs['years'] | jformat(0)}}"
+            id="years_value"
+            disabled
+        >
+    </div>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">Annual contribution</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="$ {{inputs['contribution'] | jformat(0)}}"
+            id="contribution_value"
+            disabled
+        >
+    </div>
+    <div class="input-group mb-1">
+        <span class="input-group-text" id="basic-addon1">BTC price change per year (%)</span>
+        <input
+            type="text"
+            class="form-control text-end"
+            value="{{((inputs['btc_chg'] - 1) * 100) | jformat(2)}}%"
+            id="btc_chg_value"
+            disabled
+        >
+    </div>
+</div>
+{% endblock content %}

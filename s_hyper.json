@@ -1,0 +1,49 @@
+{
+    "crypto": {
+        "stocks": {
+            "mkt_cap_trillions": 100,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture": 15
+        },
+        "bonds": {
+            "mkt_cap_trillions": 130,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture": 15
+        },
+        "gold": {
+            "mkt_cap_trillions": 10,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture":10
+        },
+        "silver": {
+            "mkt_cap_trillions": 1.3,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture":10
+        },
+        "real_estate": {
+            "mkt_cap_trillions": 320,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture": 15
+        },
+        "crypto": {
+            "mkt_cap_trillions": 0.5,
+            "perc_monetary": 1.00,
+            "prob_capture": 1.00,
+            "time_capture":10
+        },
+        "fine_art": {
+            "mkt_cap_trillions": 1.7,
+            "perc_monetary": 0.9,
+            "prob_capture": 1.00,
+            "time_capture": 15
+        }
+    },
+    "discount_rate": {
+        "value": 0.10
+    }
+}

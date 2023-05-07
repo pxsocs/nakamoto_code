@@ -1,0 +1,25 @@
+{% block content %}
+<div class="row" style="padding-top: 10px;">
+    <h5>IRA Competitor List</h5>
+    <small>
+        List can be edited under
+        <code>json/files/ira_matrix.json</code>
+    </small>
+    <div class="col-sm-12 text-super-small" style="padding-top: 20px;">
+        {{ira_list_html | safe}}
+    </div>
+</div>
+<script>
+  $(document).ready(function () {
+
+    $('#comp_table tr td').each(function(){
+                                        if ($(this).text().indexOf("Swan") >= 0) {
+                                        $(this).closest('tr').css('background-color','#FCC800');
+                                        $(this).closest('tr').css('color','#31597F');
+}
+                                        });
+
+
+  });
+</script>
+{% endblock content %}

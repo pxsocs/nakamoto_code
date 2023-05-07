@@ -1,0 +1,65 @@
+{
+    "stocks": {
+        "name": "Stocks",
+        "mkt_cap_trillions": 100,
+        "info": "Stock market capitalization can be sourced from the <a href='https://data.worldbank.org/indicator/CM.MKT.LCAP.CD'>World Bank</a> and <a href='https://www.statista.com/statistics/710680/global-stock-markets-by-country/'>Statista</a>. The data represents an approximate estimate, as the stock market capitalization varies with market movements. The data represents an approximate estimate, as the stock market capitalization varies with market movements.",
+        "perc_monetary": 0.9,
+        "prob_capture": 0.1,
+        "time_capture": 30,
+        "icon": "fa fa-line-chart"
+    },
+    "bonds": {
+        "name": "Bonds",
+        "mkt_cap_trillions": 130,
+        "info": "The global bond market capitalization was derived from sources such as the <a href='https://stats.bis.org/statx/srs/table/f1.2'>Bank for International Settlements</a>. The data represents an approximate estimate, as the bond market capitalization changes with new issuances and redemptions. It only includes the total for 'advanced economies'.",
+        "perc_monetary": 0.7,
+        "prob_capture": 0.1,
+        "time_capture": 30,
+        "icon": "fa-regular fa-file"
+    },
+    "gold": {
+        "name": "Gold",
+        "mkt_cap_trillions": 10,
+        "info": "The total market capitalization of gold was calculated using the <a href='https://www.gold.org/goldhub/data/how-much-gold'>World Gold Council data</a> on above-ground gold stocks and the average gold price per ounce at the time of writing. The data should be updated to reflect the current gold price for accurate valuation.",
+        "perc_monetary": 0.6,
+        "prob_capture": 0.7,
+        "time_capture": 7,
+        "icon": "fa-solid fa-coins"
+    },
+    "silver": {
+        "name": "Silver",
+        "mkt_cap_trillions": 1.3,
+        "info": "The total market capitalization of silver was estimated using the <a href='https://www.silverinstitute.org/silver-supply-demand/'>Silver Institute data</a> on above-ground silver stocks and the average silver price per ounce at the time of writing. The data should be updated to reflect the current silver price for accurate valuation.",
+        "perc_monetary": 0.1,
+        "prob_capture": 0.8,
+        "time_capture": 7,
+        "icon": "fa-solid fa-spoon"
+    },
+    "real_estate": {
+        "name": "Real Estate",
+        "mkt_cap_trillions": 320,
+        "info": "The total market capitalization of real estate was estimated using the <a href='https://www.savills.com/impacts/market-trends/the-total-value-of-global-real-estate/'>Savills Research data</a> on global real estate market capitalization. The data should be updated to reflect the current real estate price for accurate valuation.",
+        "perc_monetary": 0.3,
+        "prob_capture": 0.05,
+        "time_capture": 7,
+        "icon": "fa-solid fa-sign-hanging"
+    },
+    "crypto": {
+        "name": "Cryptocurrencies (ex-BTC)",
+        "mkt_cap_trillions": 0.5,
+        "info": "The total market capitalization of cryptocurrencies excluding Bitcoin was estimated using the <a href='https://coinmarketcap.com/'>CoinMarketCap data</a> on global cryptocurrency market capitalization. The data should be updated to reflect the current cryptocurrency price for accurate valuation.",
+        "perc_monetary": 1,
+        "prob_capture": 0.9,
+        "time_capture": 6,
+        "icon": "fa-solid fa-poo-storm"
+    },
+    "fine_art": {
+        "name": "Fine Art",
+        "mkt_cap_trillions": 1.7,
+        "info": "The total market capitalization of fine art was estimated using the <a href='https://www.artsy.net/article/artsy-editorial-artsys-2020-art-market-report'>Artsy data</a> on global art market capitalization. The data should be updated to reflect the current art price for accurate valuation.",
+        "perc_monetary": 0.1,
+        "prob_capture": 0.10,
+        "time_capture": 7,
+        "icon": "fa-solid fa-palette"
+    }
+}

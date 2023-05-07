@@ -1,0 +1,122 @@
+{% block content %}
+<script>
+    var old_ira_data = {{ results['chart_data']['waterfall']['HighCharts_Data_Old'] | safe}};
+    var new_ira_data = {{ results['chart_data']['waterfall']['HighCharts_Data_New'] | safe}};
+</script>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">{{inputs['ira']}} Return Contribution</div>
+            <br>
+            <div id="old_waterfall" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">Swan Return Contribution</div>
+            <br>
+            <div id="new_waterfall" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="content-section table-responsive">
+            <table class="table-condensed text-center">
+                <tbody>
+                    <tr>
+                        <td class="redgreen border-bottom hinumber text-large text-center">
+                            $ {{results['chart_data']['waterfall']['Roll Costs'] | jformat(0)}}
+                        </td>
+                        <td class="redgreen border-bottom hinumber text-large text-center">
+                            $ {{results['btc_price'] | jformat(0)}}
+                        </td>
+                        <td class="redgreen redgreen border-bottom hinumber text-large text-center">
+                            $ {{results['chart_data']['waterfall']['Final BTC Price'] | jformat(0)}}
+                        </td>
+                        <td class="redgreen redgreen border-bottom hinumber text-large text-center">
+                            {{results['years']}}
+                        </td>
+                        <td class="redgreen redgreen border-bottom hinumber text-large text-center">
+                            $ {{(results['chart_data']['waterfall']['New IRA Net After Unwind at End'] -
+                            results['chart_data']['waterfall']['Net After Unwind at End']) | jformat(0)}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-small text-center">
+                            Roll Cost from {{inputs['ira']}}
+                        </td>
+                        <td class="text-small text-center">
+                            initial BTC price
+                        </td>
+                        <td class="text-small text-center">
+                            final BTC price
+                        </td>
+                        <td class="text-small text-center">
+                            simulation years
+                        </td>
+                        <td class="text-small text-center">
+                            difference at unwind
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="content-section table-responsive">
+            <div class="col-sm-12" style="padding-top: 10px;">
+                <table class="table-condensed text-center">
+                    <tbody>
+                        <tr>
+                            <td class="border-bottom hinumber text-large text-center">
+                                <span class="lead text-danger">{{(results['unwind']['fees']['sell_fee'] * 100)  | jformat(2)}}%</span>
+                            </td>
+                            <td class="border-bottom hinumber text-large text-center">
+                                <span class="lead text-danger">{{(results['unwind']['fees']['spread_percent'] * 100)  | jformat(2)}}%</span>
+                            </td>
+                            <td class="redgreen border-bottom hinumber text-large text-center">
+                                <span class="lead text-danger">$ {{(results['unwind']['fees']['spread_usd'])  | jformat(0)}}%</span>
+                            </td>
+                            <td class="redgreen border-bottom hinumber text-large text-center">
+                                <span class="lead text-danger">$ {{(results['unwind']['fees']['withdraw_fee'])  | jformat(0)}}%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-small text-center">
+                                Sell Fee
+                            </td>
+                            <td class="text-small text-center">
+                                Price Spread (%)
+                            </td>
+                            <td class="text-small text-center">
+                                Price Spread ($)
+                            </td>
+                            <td class="text-small text-center">
+                                Withdraw Fee ($)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-dark" style="padding-top: 20px;">
+                    <i class="fa-solid fa-circle-info text-warning"></i>
+                    &nbsp;&nbsp;Unwinding the current IRA would have a total cost of
+                    <span class="text-danger">$ {{results['unwind']['cost_unwind'] | jformat(0)}}</span>
+                    or
+                    <span class="text-danger">{{((results['unwind']['cost_unwind'] / results['unwind']['before_unwind'] * 100))  | jformat(2)}}%</span>
+                    of the portfolio value.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

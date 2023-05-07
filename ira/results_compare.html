@@ -1,0 +1,58 @@
+{% block content %}
+<script>
+    var btc_forecast = {{ results['chart_data']['waterfall']['btc_forecast'] | safe}};
+    var position_data = {{ results['chart_data']['waterfall']['position_data'] | safe}};
+    var fee_data = {{ results['chart_data']['waterfall']['fee_data'] | safe}};
+</script>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">Cumulative Fees Forecast</div>
+            <div id="fee_chart" style="height: 500px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">Bitcoin Price Forecast</div>
+            <div id="btc_forecast" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">BTC that could be acquired with fee difference</div>
+            <div id="btc_bought" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">Position Forecast (BTC)</div>
+            <div id="pos_chart" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="content-section table-responsive">
+            <br>
+            <div class="lead text-center">Position Forecast (USD)</div>
+            <div id="pos_chart_usd" style="height: 300px; margin: 0 auto">
+                <span class="loadanim">&nbsp;Loading Chart</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

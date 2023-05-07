@@ -308,7 +308,7 @@ function buildMapData() {
         const row = $(this);
         const countryName = row.find("th:eq(0)").text().trim();
         const cds = parseFloat(row.find("td:eq(2)").text().replace(/,/g, ""));
-        const probabilityOfDefault = parseFloat(row.find("td:eq(6)").text().replace(/,/g, "").replace("%", ""));
+        const probabilityOfDefault = parseFloat(row.find("td:eq(7)").text().replace(/,/g, "").replace("%", ""));
 
         let totalDebt = 0;
         $("#debtTable tbody tr").each(function () {

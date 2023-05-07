@@ -1,0 +1,25 @@
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',
+            filename='css/punchline.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Oswald:700|Neuton" rel="stylesheet" type="text/css">
+{%set new_ira = results['chart_data']['waterfall']['New IRA Net After Unwind at End']%}
+{%set old_ira = results['chart_data']['waterfall']['Net After Unwind at End']%}
+{%set diff = (new_ira - old_ira)%}
+<div class="text-center">
+    {%if diff > 0%}
+    <p>
+        SWAN IRA SAVES
+        <span>$ {{diff | jformat(0)}}</span>
+        IN FEES COMPARED TO {{results['ira']}}
+        <br>
+        IN THIS SCENARIO
+    </p>
+    {%else%}
+    <p>
+        IN THIS SCENARIO THERE WILL BE NO COST
+        <br>
+        SAVINGS BY SWITCHING TO SWAN IRA
+    </p>
+    {%endif%}
+</div>
+{% endblock content %}

@@ -1,0 +1,485 @@
+{
+    "start_period": {
+        "index": "Start Period",
+        "short_description": "Date when the analysis starts",
+        "long_description": "The start period represents the first date of the time frame being analyzed. The portfolio's performance and related statistics will be calculated starting from this date.",
+        "format": "date",
+        "decimal_places": 0
+    },
+    "end_period": {
+        "index": "End Period",
+        "short_description": "Date when the analysis ends",
+        "long_description": "The end period represents the last date of the time frame being analyzed. The portfolio's performance and related statistics will be calculated up to this date.",
+        "format": "date",
+        "decimal_places": 0
+    },
+    "cumulative_return": {
+        "index": "Cumulative Return",
+        "short_description": "Total return over the period",
+        "long_description": "Cumulative return represents the total return of a portfolio over the period being analyzed. It is calculated as the final value of the portfolio divided by its initial value minus 1, expressed as a percentage.",
+        "format": "percent_100",
+        "decimal_places": 2
+    },
+    "cagr": {
+        "index": "CAGR﹪",
+        "short_description": "Annualized return",
+        "long_description": "Compound Annual Growth Rate (CAGR) represents the annualized return of a portfolio over the period being analyzed. It is the rate at which the portfolio would have grown if its value had increased at a constant rate every year.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "sharpe": {
+        "index": "Sharpe",
+        "short_description": "Risk-adjusted return",
+        "long_description": "The Sharpe ratio is a measure of the risk-adjusted return of a portfolio. It is calculated as the portfolio's excess return (the return above the risk-free rate) divided by its volatility (standard deviation). A higher Sharpe ratio indicates better risk-adjusted performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "sortino": {
+        "index": "Sortino",
+        "short_description": "Downside risk-adjusted return",
+        "long_description": "The Sortino ratio is a measure of the downside risk-adjusted return of a portfolio. It is calculated as the portfolio's excess return (the return above the risk-free rate) divided by its downside deviation (the standard deviation of negative returns). A higher Sortino ratio indicates better downside risk-adjusted performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "volatility_annual": {
+        "index": "Volatility (ann.)",
+        "short_description": "Annualized volatility",
+        "long_description": "Annualized volatility is a measure of how much the portfolio's returns fluctuate over a year. It is calculated as the standard deviation of the portfolio's returns, scaled to an annual basis. Higher volatility indicates a more risky investment.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "max_drawdown": {
+        "index": "Max Drawdown",
+        "short_description": "Largest drop in value",
+        "long_description": "Max drawdown is the largest percentage drop in the portfolio's value from its peak to its trough during the period being analyzed. It is a measure of the portfolio's downside risk, with a larger drawdown indicating a higher risk.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "beta": {
+        "index": "Beta",
+        "short_description": "Portfolio's sensitivity to market",
+        "long_description": "Beta is a measure of a portfolio's sensitivity to market movements. It represents how much the portfolio's returns are expected to change relative to a benchmark (usually a market index). A beta of 1 indicates the portfolio moves in tandem with the benchmark, while a beta greater (or less) than 1 indicates the portfolio is more (or less) volatile than the benchmark.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "alpha": {
+        "index": "Alpha",
+        "short_description": "Portfolio's excess return",
+        "long_description": "Alpha is a measure of a portfolio's excess return relative to a benchmark, accounting for the portfolio's risk (beta). It represents the difference between the portfolio's actual return and the expected return based on its beta and the benchmark's return. A positive alpha indicates the portfolio has outperformed the benchmark on a risk-adjusted basis.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "correlation": {
+        "index": "Correlation",
+        "short_description": "Relationship between portfolio and benchmark",
+        "long_description": "Correlation is a measure of the strength and direction of the relationship between a portfolio's returns and a benchmark's returns. It ranges from -1 to 1, where a correlation of 1 indicates the portfolio and benchmark move in the same direction, -1 indicates they move in opposite directions, and 0 indicates no relationship.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "treynor": {
+        "index": "Treynor Ratio",
+        "short_description": "Risk-adjusted return based on beta",
+        "long_description": "The Treynor ratio is a measure of the risk-adjusted return of a portfolio based on its beta. It is calculated as the portfolio's excess return (the return above the risk-free rate) divided by its beta. A higher Treynor ratio indicates better risk-adjusted performance relative to the benchmark.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "information_ratio": {
+        "index": "Information Ratio",
+        "short_description": "Risk-adjusted excess return",
+        "long_description": "The Information Ratio is a measure of a portfolio's risk-adjusted excess return relative to a benchmark. It is calculated as the portfolio's active return (the difference between the portfolio's return and the benchmark's return) divided by the tracking error (the standard deviation of the active return). A higher Information Ratio indicates better risk-adjusted excess performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "calmar": {
+        "index": "Calmar",
+        "short_description": "Return relative to max drawdown",
+        "long_description": "The Calmar Ratio is a measure of a portfolio's return relative to its maximum drawdown. It is calculated as the portfolio's Compound Annual Growth Rate (CAGR) divided by the absolute value of its maximum drawdown. A higher Calmar Ratio indicates better performance relative to the portfolio's downside risk.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "skew": {
+        "index": "Skew",
+        "short_description": "Asymmetry of returns",
+        "long_description": "Skewness is a measure of the asymmetry of a portfolio's return distribution. A positive skew indicates that the portfolio has more frequent large gains than large losses, while a negative skew indicates more frequent large losses than large gains. A skew of zero indicates a symmetric return distribution.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "kurtosis": {
+        "index": "Kurtosis",
+        "short_description": "Extremes in returns",
+        "long_description": "Kurtosis is a measure of the extremeness of a portfolio's return distribution. It indicates whether the portfolio has more or less extreme returns (i.e., outliers) than a normal distribution. A kurtosis greater than 3 indicates more extreme returns, while a kurtosis less than 3 indicates less extreme returns.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "gain_pain_ratio": {
+        "index": "Gain/Pain Ratio",
+        "short_description": "Profit relative to pain",
+        "long_description": "The Gain/Pain Ratio is a measure of a portfolio's profit relative to the pain experienced by its investors. It is calculated as the sum of all positive returns divided by the absolute sum of all negative returns. A higher Gain/Pain Ratio indicates a better balance between gains and losses.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "tail_ratio": {
+        "index": "Tail Ratio",
+        "short_description": "Ratio of extreme gains to losses",
+        "long_description": "The Tail Ratio is a measure of the portfolio's extreme gains relative to its extreme losses. It is calculated as the ratio of the average value of the portfolio's returns in the 95th percentile to the average value of its returns in the 5th percentile. A higher Tail Ratio indicates a better balance between extreme gains and losses.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "outlier_win_ratio": {
+        "index": "Outlier Win Ratio",
+        "short_description": "Ratio of extreme gains",
+        "long_description": "The Outlier Win Ratio is a measure of the portfolio's extreme gains compared to a normal distribution. It represents the ratio of the portfolio's returns in the 95th percentile to the 95th percentile of a normal distribution. A higher Outlier Win Ratio indicates the portfolio has more extreme gains than expected.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "outlier_loss_ratio": {
+        "index": "Outlier Loss Ratio",
+        "short_description": "Ratio of extreme losses",
+        "long_description": "The Outlier Loss Ratio is a measure of the portfolio's extreme losses compared to a normal distribution. It represents the ratio of the portfolio's returns in the 5th percentile to the 5th percentile of a normal distribution. A higher Outlier Loss Ratio indicates the portfolio has more extreme losses than expected.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "recovery_factor": {
+        "index": "Recovery Factor",
+        "short_description": "Profit relative to max drawdown",
+        "long_description": "The Recovery Factor is a measure of a portfolio's profit relative to its maximum drawdown. It is calculated as the cumulative return divided by the absolute value of the maximum drawdown. A higher Recovery Factor indicates a better balance between profits and losses, as well as a faster recovery from drawdowns.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "ulcer_index": {
+        "index": "Ulcer Index",
+        "short_description": "Risk-adjusted performance measure",
+        "long_description": "The Ulcer Index is a risk-adjusted performance measure that takes into account both the depth and duration of drawdowns in a portfolio. It is calculated as the square root of the average of the squared percentage drawdowns. A lower Ulcer Index indicates better risk-adjusted performance and lower downside risk.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "serenity_index": {
+        "index": "Serenity Index",
+        "short_description": "Risk-adjusted return based on Ulcer Index",
+        "long_description": "The Serenity Index is a measure of a portfolio's risk-adjusted return based on the Ulcer Index. It is calculated as the portfolio's excess return (the return above the risk-free rate) divided by its Ulcer Index. A higher Serenity Index indicates better risk-adjusted performance relative to the downside risk.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "win_days": {
+        "index": "Win Days",
+        "short_description": "Proportion of winning days",
+        "long_description": "Win Days is the proportion of days when the portfolio had a positive return. It is calculated as the number of winning days divided by the total number of trading days. A higher Win Days ratio indicates a higher consistency of positive returns on a daily basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "win_month": {
+        "index": "Win Month",
+        "short_description": "Proportion of winning months",
+        "long_description": "Win Month is the proportion of months when the portfolio had a positive return. It is calculated as the number of winning months divided by the total number of months. A higher Win Month ratio indicates a higher consistency of positive returns on a monthly basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "win_quarter": {
+        "index": "Win Quarter",
+        "short_description": "Proportion of winning quarters",
+        "long_description": "Win Quarter is the proportion of quarters when the portfolio had a positive return. It is calculated as the number of winning quarters divided by the total number of quarters. A higher Win Quarter ratio indicates a higher consistency of positive returns on a quarterly basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "win_year": {
+        "index": "Win Year",
+        "short_description": "Proportion of winning years",
+        "long_description": "Win Year is the proportion of years when the portfolio had a positive return. It is calculated as the number of winning years divided by the total number of years. A higher Win Year ratio indicates a higher consistency of positive returns on an annual basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "avg_up_month": {
+        "index": "Avg. Up Month",
+        "short_description": "Average return in winning months",
+        "long_description": "Avg. Up Month is the average return of the portfolio during winning months. It represents the average percentage gain in months when the portfolio had a positive return.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "avg_down_month": {
+        "index": "Avg. Down Month",
+        "short_description": "Average return in losing months",
+        "long_description": "Avg. Down Month is the average return of the portfolio during losing months. It represents the average percentage loss in months when the portfolio had a negative return.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "expected_daily": {
+        "index": "Expected Daily",
+        "short_description": "Avg. expected daily return",
+        "long_description": "Expected Daily return is the average return that a portfolio is expected to generate on a daily basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "expected_monthly": {
+        "index": "Expected Monthly",
+        "short_description": "Avg. expected monthly return",
+        "long_description": "Expected Monthly return is the average return that a portfolio is expected to generate on a monthly basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "expected_yearly": {
+        "index": "Expected Yearly",
+        "short_description": "Avg. expected yearly return",
+        "long_description": "Expected Yearly return is the average return that a portfolio is expected to generate on a yearly basis.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "kelly_criterion": {
+        "index": "Kelly Criterion",
+        "short_description": "Optimal bet size",
+        "long_description": "The Kelly Criterion is a formula used to determine the optimal size of a series of bets based on the probability of a positive outcome and the return on investment. It helps to maximize the growth of the portfolio in the long run.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "risk_of_ruin": {
+        "index": "Risk of Ruin",
+        "short_description": "Risk of losing all capital",
+        "long_description": "Risk of Ruin is the probability of an investor losing all their capital due to a series of consecutive losses or reaching an unrecoverable low point in their investment value.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "daily_value_at_risk": {
+        "index": "Daily Value-at-Risk",
+        "short_description": "Potential daily loss",
+        "long_description": "Daily Value-at-Risk (VaR) is a statistical measure of the potential loss in the value of a portfolio due to adverse market movements over a one-day period. It estimates the maximum amount of loss with a given level of confidence (usually 95% or 99%).",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "expected_shortfall_cvar": {
+        "index": "Expected Shortfall (cVaR)",
+        "short_description": "Avg. loss beyond VaR",
+        "long_description": "Expected Shortfall (also known as Conditional Value-at-Risk or cVaR) is a risk measure that estimates the average loss that a portfolio could incur on days when the portfolio's losses exceed the Value-at-Risk (VaR) threshold. It provides a more accurate measure of tail risk than VaR.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "max_consecutive_wins": {
+        "index": "Max Consecutive Wins",
+        "short_description": "Longest winning streak",
+        "long_description": "Max Consecutive Wins is the maximum number of consecutive profitable trading periods (e.g., days, weeks, or months) for a portfolio.",
+        "format": "decimal",
+        "decimal_places": 0
+    },
+    "max_consecutive_losses": {
+        "index": "Max Consecutive Losses",
+        "short_description": "Longest losing streak",
+        "long_description": "Max Consecutive Losses is the maximum number of consecutive unprofitable trading periods (e.g., days, weeks, or months) for a portfolio.",
+        "format": "decimal",
+        "decimal_places": 0
+    },
+    "gain_pain_1m": {
+        "index": "Gain/Pain (1M)",
+        "short_description": "1-month gain to pain ratio",
+        "long_description": "Gain/Pain (1M) is the ratio of the sum of positive monthly returns to the sum of negative monthly returns over the past one month. It measures the effectiveness of an investment strategy by comparing the magnitudes of gains and losses.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "payoff_ratio": {
+        "index": "Payoff Ratio",
+        "short_description": "Avg. win to avg. loss",
+        "long_description": "Payoff Ratio is the average profit of winning trades divided by the average loss of losing trades. A higher payoff ratio indicates a more profitable trading strategy.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "profit_factor": {
+        "index": "Profit Factor",
+        "short_description": "Gross profit to loss",
+        "long_description": "Profit Factor is the ratio of the total gross profit to the total gross loss. It measures the effectiveness of a trading strategy by comparing the profits and losses. A profit factor greater than 1 indicates a profitable trading strategy.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "common_sense_ratio": {
+        "index": "Common Sense Ratio",
+        "short_description": "Risk-adjusted performance",
+        "long_description": "Common Sense Ratio is a measure of risk-adjusted performance that combines multiple risk and return metrics to provide a comprehensive view of a portfolio's performance. It is calculated as the product of the Sortino Ratio, the Gain-to-Pain Ratio, and the Ulcer Performance Index.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "cpc_index": {
+        "index": "CPC Index",
+        "short_description": "Consistency of returns",
+        "long_description": "CPC Index (Consistency of Positive Contributions) is a measure that evaluates the consistency of positive returns of a portfolio over time. A higher CPC index indicates a more consistent positive performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "mtd": {
+        "index": "MTD",
+        "short_description": "Month-to-date return",
+        "long_description": "MTD (Month-to-Date) return is the cumulative return of a portfolio from the beginning of the current month up to the current date.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "3m": {
+        "index": "3M",
+        "short_description": "3-month return",
+        "long_description": "3M (3-Month) return is the cumulative return of a portfolio over the past three months.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "6m": {
+        "index": "6M",
+        "short_description": "6-month return",
+        "long_description": "6M (6-Month) return is the cumulative return of a portfolio over the past six months.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "ytd": {
+        "index": "YTD",
+        "short_description": "Year-to-date return",
+        "long_description": "YTD (Year-to-Date) return is the cumulative returnof a portfolio from the beginning of the current year up to the current date.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "1y": {
+        "index": "1Y",
+        "short_description": "1-year return",
+        "long_description": "1Y (1-Year) return is the cumulative return of a portfolio over the past one year.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "3y_annualized": {
+        "index": "3Y (ann.)",
+        "short_description": "3-year annualized return",
+        "long_description": "3Y (3-Year) annualized return is the average annual return of a portfolio over the past three years.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "5y_annualized": {
+        "index": "5Y (ann.)",
+        "short_description": "5-year annualized return",
+        "long_description": "5Y (5-Year) annualized return is the average annual return of a portfolio over the past five years.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "10y_annualized": {
+        "index": "10Y (ann.)",
+        "short_description": "10-year annualized return",
+        "long_description": "10Y (10-Year) annualized return is the average annual return of a portfolio over the past ten years.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "all_time_annualized": {
+        "index": "All-time (ann.)",
+        "short_description": "All-time annualized return",
+        "long_description": "All-time (ann.) return is the average annual return of a portfolio over its entire history.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "best_day": {
+        "index": "Best Day",
+        "short_description": "Highest daily return",
+        "long_description": "Best Day is the highest daily return achieved by a portfolio.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "worst_day": {
+        "index": "Worst Day",
+        "short_description": "Lowest daily return",
+        "long_description": "Worst Day is the lowest daily return achieved by a portfolio.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "best_month": {
+        "index": "Best Month",
+        "short_description": "Highest monthly return",
+        "long_description": "Best Month is the highest monthly return achieved by a portfolio.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "worst_month": {
+        "index": "Worst Month",
+        "short_description": "Lowest monthly return",
+        "long_description": "Worst Month is the lowest monthly return achieved by a portfolio.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "best_year": {
+        "index": "Best Year",
+        "short_description": "Highest yearly return",
+        "long_description": "Best Year is the highest yearly return achieved by a portfolio.",
+        "format": "percent_100",
+        "decimal_places": 2
+    },
+    "worst_year": {
+        "index": "Worst Year",
+        "short_description": "Lowest yearly return",
+        "long_description": "Worst Year is the lowest yearly return achieved by a portfolio.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "avg_drawdown": {
+        "index": "Avg. Drawdown",
+        "short_description": "Average drawdown",
+        "long_description": "Avg. Drawdown is the average of all drawdowns experienced by a portfolio. A drawdown is the decline in the value of a portfolio from its peak to its subsequent trough.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "avg_drawdown_days": {
+        "index": "Avg. Drawdown Days",
+        "short_description": "Average drawdown duration",
+        "long_description": "Avg. Drawdown Days is the average number of days it takes for a portfolio to recover from a drawdown. It measures the duration of the decline in the value of a portfolio from its peak to its subsequent trough.",
+        "format": "decimal",
+        "decimal_places": 0
+    },
+    "risk_free_rate": {
+        "index": "Risk-Free Rate",
+        "short_description": "Risk-free rate",
+        "long_description": "Risk-Free Rate is the return on an investment with zero risk, often represented by the return on a short-term government bond. It is used as a benchmark to compare the returns of other investments with the risk-free rate.",
+        "format": "percentage",
+        "decimal_places": 2
+    },
+    "time_in_market": {
+        "index": "Time in Market",
+        "short_description": "Investment period",
+        "long_description": "Time in Market represents the proportion of time that an investment strategy was invested in the market, expressed as a ratio between 0 and 1. A higher value indicates that the strategy was invested for a greater proportion of the time.",
+        "format": "decimal",
+        "decimal_places": 0
+    },
+    "prob_sharpe_ratio": {
+        "index": "Prob. Sharpe Ratio",
+        "short_description": "Probability-adjusted Sharpe ratio",
+        "long_description": "Prob. Sharpe Ratio (Probability-adjusted Sharpe ratio) is the Sharpe ratio adjusted for the probability of achieving a particular return. It takes into account the uncertainty of returns and provides a more accurate measure of risk-adjusted performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "smart_sharpe": {
+        "index": "Smart Sharpe",
+        "short_description": "Smart Sharpe ratio",
+        "long_description": "Smart Sharpe ratio is a modification of the traditional Sharpe ratio that adjusts for the effects of skewness and kurtosis in the return distribution. It provides a more accurate measure of risk-adjusted performance when returns are not normally distributed.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "smart_sortino": {
+        "index": "Smart Sortino",
+        "short_description": "Smart Sortino ratio",
+        "long_description": "Smart Sortino ratio is a modification of the traditional Sortino ratio that adjusts for the effects of skewness and kurtosis in the return distribution. It provides a more accurate measure of risk-adjusted performance when downside returns are not normally distributed.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "sortino_sqrt2": {
+        "index": "Sortino/√2",
+        "short_description": "Sortino ratio divided by square root of 2",
+        "long_description": "Sortino/√2 is the Sortino ratio divided by the square root of 2. This adjustment normalizes the Sortino ratio for comparison with other risk-adjusted performance measures, such as the Sharpe ratio.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "smart_sortino_sqrt2": {
+        "index": "Smart Sortino/√2",
+        "short_description": "Smart Sortino ratio divided by square root of 2",
+        "long_description": "Smart Sortino/√2 is the Smart Sortino ratio divided by the square root of 2. This adjustment normalizes the Smart Sortino ratio for comparison with other risk-adjusted performance measures, such as the Smart Sharpe ratio.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "omega": {
+        "index": "Omega",
+        "short_description": "Omega ratio",
+        "long_description": "Omega ratio is a risk-adjusted performance measure that takes into account both the probability and magnitude of gains and losses. It compares the potential reward of an investment to the risk of losses, with a higher value indicating better risk-adjusted performance.",
+        "format": "decimal",
+        "decimal_places": 2
+    },
+    "longest_dd_days": {
+        "index": "Longest DD Days",
+        "short_description": "Longest drawdown duration",
+        "long_description": "Longest DD Days (Longest Drawdown Days) is the longest period of time it took for a portfolio to recover from a drawdown. It measures the duration of the decline in the value of a portfolio from its peak to its subsequent trough, providing an indication of the portfolio's historical risk.",
+        "format": "decimal",
+        "decimal_places": 0
+    }
+}
